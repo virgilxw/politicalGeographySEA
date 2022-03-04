@@ -1,0 +1,18 @@
+div {
+  display: block;
+}
+
+.navbar {
+  background-color: #cb997e;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+#topBuffer{
+  height: 15vh;
+}

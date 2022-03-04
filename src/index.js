@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Essay from './Essay';
+import './index.css';
+import Header from './components/header';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <div>
+    <Header />    
+    <div id="topBuffer"/>
+    <Essay />
+  </div>,
   document.getElementById('root')
 );
