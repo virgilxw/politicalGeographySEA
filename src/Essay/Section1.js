@@ -29,7 +29,7 @@ const Map1 = ({ mapContainer }) => {
 
 const Text1 = () => {
   return (
-    <div className="overlap">
+    <div className="text_overlap">
       <div className="bubble dark righty" id="para1GreatRiver">
         <p>
           The Mekong River is one of the world 's great rivers - the 12th
@@ -48,19 +48,19 @@ const Text1 = () => {
         <p>
           The Mekong is fed by glacial meltwater from the Himalayas, flowing
           through the Tibetan plateau into Yunnan Province. The Chinese portion
-          of the river is often known by its local name, the Lancang.{" "}
+          of the river is often known by its local name, the Lancang.
         </p>
         <p>
           China, as the source of the Mekong River, holds tremendous
-          hydrological power over all countries downstream of it.A point of
+          hydrological power over all countries downstream of it. A point of
           contention has historically been the building of dams without sharing
-          hydrological data or engaging in adequate Environmental Impact
+          hydrological data or engaging in adequate Environmefntal Impact
           Assessments, a tactic more recently adopted by other countries in the
           region.
         </p>
         <p>
           Under Xi Jinping, China has taken a more active role in engaging other
-          Mekong countries.One press release from China 's government reads:
+          Mekong countries. One press release from China 's government reads:
         </p>
         <blockquote>
           [China's Minister of Water Resources] said that China will
@@ -125,16 +125,36 @@ const Text1 = () => {
           The incident was played up in Chinese mass media. In 2016, the
           incident was adapted into a highly-fictionalised action movie named
           "Operation Mekong". The movie did not mention the Amphetamine pills
-          found on the Chinese ship, and depicted Chinese law enforcement operating in
-          a foreign rainforest to track down those responsible for the attack.
+          found on the Chinese ship, and depicted Chinese law enforcement
+          operating in a foreign rainforest to track down those responsible for
+          the murder of Chinese citizens.
         </p>
       </div>
       <div className="bubble dark lefty" id="para5Cambodia">
         <h2>The Unique Hydrology of the Lower Mekong</h2>
-        <p>Flowing further south, the Mekong River flows through Laos before entering Cambodia</p>
-        <p>Flooding is a vital hydrological characteristic of the Mekong River Basin, caused by the yearly monsoon between May and November. The change in rainfall is the only “seasonal” weather change in an otherwise tropical region.</p>
+        <p>
+          Flowing further south, the Mekong River flows through Laos before
+          entering Cambodia
+        </p>
+        <p>
+          Flooding is a vital hydrological characteristic of the Mekong River
+          Basin, caused by the yearly monsoon between May and November. The
+          change in rainfall is the only “seasonal” weather change in an
+          otherwise tropical region.
+        </p>
         <p>As one report notes, flooding </p>
-        <blockquote>improves water availability during the dry season, and maintains and 35 increases the high productivity of ecosystems and biodiversity. As part of the annual flood cycle, floodwaters transport essential sediments and nutrients from the river channel into the floodplain, and distribute them across a wide area, fertilizing agricultural lands and enhancing floodplain productivity. Moreover, the wider the flood 40 extent, the larger the area of interaction between aquatic and terrestrial phases, which increases the potential transfer of floodplain terrestrial organic matter and energy into the aquatic phase.<sup>3</sup></blockquote>
+        <blockquote>
+          improves water availability during the dry season, and maintains and
+          35 increases the high productivity of ecosystems and biodiversity. As
+          part of the annual flood cycle, floodwaters transport essential
+          sediments and nutrients from the river channel into the floodplain,
+          and distribute them across a wide area, fertilizing agricultural lands
+          and enhancing floodplain productivity. Moreover, the wider the flood
+          40 extent, the larger the area of interaction between aquatic and
+          terrestrial phases, which increases the potential transfer of
+          floodplain terrestrial organic matter and energy into the aquatic
+          phase.<sup>3</sup>
+        </blockquote>
       </div>
     </div>
   );
@@ -146,6 +166,7 @@ const Section1 = () => {
   const [lng, setLng] = useState(105);
   const [lat, setLat] = useState(15);
   const [zoom, setZoom] = useState(3.9);
+  const [textHeight, setTextHeight] = useState()
 
   var anim;
 
@@ -154,7 +175,7 @@ const Section1 = () => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/satellite-v9",
+      style: "mapbox://styles/virgilwxw/cl0jy5edi000i15l8tipmxxxx",
       center: [lng, lat],
       zoom: zoom,
       interactive: false,
@@ -176,13 +197,6 @@ const Section1 = () => {
       map.addSource("Mekong_countries_centoids", {
         type: "geojson",
         data: Mekong_countries_centoids,
-      });
-      map.addSource("Satellite_Street_raster", {
-        type: "raster",
-        tiles: [
-          "https://api.mapbox.com/styles/v1/virgilwxw/cl0jy5edi000i15l8tipmxxxx/tiles/{z}/{x}/{y}/?access_token=pk.eyJ1IjoidmlyZ2lsd3h3IiwiYSI6ImNsMGUyMGh6bTBlbzAzY3BvZHpoZ3h0aHcifQ.zm6vOoHcflj3SVSSiqqwrg",
-        ],
-        tileSize: 256,
       });
       map.addSource("golden_triangle_centoid", {
         type: "geojson",
@@ -230,13 +244,15 @@ const Section1 = () => {
 
       gsap.registerPlugin(ScrollTrigger);
 
+      setTextHeight($(".text_overlap").height())
+
       ScrollTrigger.create({
         trigger: "#map1",
         start: "top top",
-        end: "+=7000px",
+        end: "+="+textHeight,
         pin: true,
-        //// markers: true,
-        //id: "map1"
+        markers: true,
+        id: "map1"
       });
 
       gsap.to("#para1GreatRiver", {
@@ -308,11 +324,9 @@ const Section1 = () => {
         trigger: "#para1GreatRiver",
         start: "top 70%",
         onEnter: () => {
-          
           watershed_overlay_in(map);
         },
         onLeaveBack: () => {
-          
           watershed_overlay_out(map, lng, lat, zoom);
         },
         // markers: true,
@@ -323,11 +337,9 @@ const Section1 = () => {
         trigger: "#para2Countries",
         start: "top 70%",
         onEnter: () => {
-          
           sixCountriesin(map);
         },
         onLeaveBack: () => {
-          
           sixCountriesOut(map);
           watershed_overlay_in(map);
         },
@@ -339,72 +351,14 @@ const Section1 = () => {
         trigger: "#para3Source",
         start: "top 70%",
         onEnter: () => {
-          
           sixCountriesOut(map);
-          map.flyTo({
-            zoom: 13.98,
-            center: [98.769057, 28.576586],
-            pitch: 76.5,
-            bearing: 153.99,
-          });
-        
-          $(".legend").css("visibility", "visible");
-          $(".legend-text").append("Mei Li Snow Mountains, Yunan, China");
-        
-          let animationIndex = 0;
-          let animationTime = 0.0;
-        
-          // wait for the terrain and sky to load before starting animations
-          map.once("moveend", () => {
-            const animations = [
-              {
-                duration: 100000.0,
-                animate: (phase) => {
-                  const start = [98.769057, 28.576586];
-                  const end = [98.83937673711154, 28.409545253840413];
-                  const alt = [6000.0, 6000.0];
-        
-                  // interpolate camera position while keeping focus on a target lat/lng
-                  const position = lerp(start, end, phase);
-                  const altitude = lerp(alt[0], alt[1], phase);
-                  const target = [98.85455848138156, 28.34868534689601];
-        
-                  updateCameraPosition(position, altitude, target, map);
-                },
-              },
-            ];
-        
-            let lastTime = 0.0;
-        
-            function frame(time) {
-              animationIndex %= animations.length;
-              const current = animations[animationIndex];
-        
-              if (animationTime < current.duration) {
-                // Normalize the duration between 0 and 1 to interpolate the animation
-                const phase = animationTime / current.duration;
-                current.animate(phase);
-              }
-        
-              // Elasped time since last frame, in milliseconds
-              const elapsed = time - lastTime;
-              animationTime += elapsed;
-              lastTime = time;
-        
-              if (animationTime > current.duration) {
-                animationIndex++;
-                animationTime = 0.0;
-              }
-        
-              window.requestAnimationFrame(frame)
-            }
-        
-            window.requestAnimationFrame(frame)
-          });
+          SourceIn(map);
         },
         onLeaveBack: () => {
+          stop(anim);
+          anim = undefined;
           $(".legend").css("visibility", "hidden");
-          $(".legend-text").empty();
+          
           sixCountriesin(map);
         },
         // markers: true,
@@ -415,114 +369,279 @@ const Section1 = () => {
         trigger: "#para4GoldenTriangle",
         start: "top 40%",
         onEnter: () => {
-          
-          $(".legend").css("visibility", "hidden");
-          $(".legend-text").empty();
-          map.flyTo({
-            zoom: 7.65,
-            center: [101.219712, 20.376257],
-            pitch: 58.12,
-            bearing: 15.58,
-          });
-          map.addLayer({
-            id: "Satellite_Street_raster",
-            type: "raster",
-            source: "Satellite_Street_raster",
-          });
-          map.addLayer({
-            id: "Mekong_line",
-            type: "line",
-            source: "Mekong_line",
-            paint: {
-              "line-color": {
-                property: "straherm1",
-                stops: [
-                  [2, "#a6bddb"],
-                  [6, "#045a8d"],
-                ],
-              },
-              "line-opacity": 1,
-              "line-width": ["get", "straherm1"],
-            },
-          });
-          map.addLayer({
-            id: "Mekong_countries",
-            type: "fill",
-            source: "Mekong_countries",
-            paint: {
-              "fill-color": ["get", "Color"],
-              "fill-opacity": 0.2,
-            },
-          });
-          map.addLayer({
-            id: "golden_triangle_centoid",
-            type: "symbol",
-            source: "golden_triangle_centoid",
-            paint: {
-              "text-halo-width": 3,
-              "text-halo-color": "white",
-            },
-            layout: {
-              //"text-font": ["Viaoda Libre Regular", "Open Sans Regular"],
-              "symbol-placement": "point",
-              "text-anchor": "center",
-              "text-field": ["get", "Name"],
-              "text-size": 24,
-            },
-          });
+          stop(anim);
+          anim = undefined;
+          GoldenTriangleIn(map);
         },
         onLeaveBack: () => {
-          map.removeLayer("Satellite_Street_raster");
-          map.removeLayer("Mekong_line");
-          map.removeLayer("Mekong_countries");
-          map.removeLayer("golden_triangle_centoid");
+          GoldenTriangleOut(map);
+          SourceIn(map);
         },
         // markers: true,
         id: "para4GoldenTriangle",
       });
+      ScrollTrigger.create({
+        trigger: "#para5Cambodia",
+        start: "top 40%",
+        onEnter: () => {
+          GoldenTriangleOut(map)
+          map.flyTo({
+            zoom: 6.68,
+            center: [104.366628, 12.678655],
+            pitch: 48.61,
+            bearing: 0.00,
+          });
+        },
+        onLeaveBack: () => {
+          GoldenTriangleIn(map);
+        },
+        // markers: true,
+        id: "para5Cambodia",
+      });
     });
   });
+
+  function SourceIn(map) {
+    map.flyTo({
+      zoom: 12,
+      center: [98.769057, 28.576586],
+      pitch: 76.5,
+      bearing: 153.99,
+    });
+  
+    $(".legend").css("visibility", "visible");
+    $(".legend-text").empty();
+    $(".legend-text").append("Mei Li Snow Mountains, Yunan, China");
+  
+    let animationIndex = 0;
+    let animationTime = 0.0;
+  
+    // wait for the terrain and sky to load before starting animations
+    map.once("moveend", () => {
+      const animations = [
+        {
+          duration: 100000.0,
+          animate: (phase) => {
+            const start = [98.769057, 28.576586];
+            const end = [98.83937673711154, 28.409545253840413];
+            const alt = [5000.0, 5000.0];
+  
+            // interpolate camera position while keeping focus on a target lat/lng
+            const position = lerp(start, end, phase);
+            const altitude = lerp(alt[0], alt[1], phase);
+            const target = [98.85455848138156, 28.34868534689601];
+  
+            updateCameraPosition(position, altitude, target, map);
+          },
+        },
+      ];
+  
+      let lastTime = 0.0;
+  
+      function frame(time) {
+        animationIndex %= animations.length;
+        const current = animations[animationIndex];
+  
+        if (animationTime < current.duration) {
+          // Normalize the duration between 0 and 1 to interpolate the animation
+          const phase = animationTime / current.duration;
+          current.animate(phase);
+        }
+  
+        // Elasped time since last frame, in milliseconds
+        const elapsed = time - lastTime;
+        animationTime += elapsed;
+        lastTime = time;
+  
+        if (animationTime > current.duration) {
+          animationIndex++;
+          animationTime = 0.0;
+        }
+  
+        anim = window.requestAnimationFrame(frame);
+      }
+      start(frame);
+    });
+  }
+  
+  function start(frame) {
+    if (!anim) {
+      anim = window.requestAnimationFrame(frame);
+    }
+  }
+  
+  function stop(anim) {
+    if (anim) {
+      window.cancelAnimationFrame(anim);
+      anim = undefined;
+      }
+  }
+  
+  function watershed_overlay_out(map, lng, lat, zoom) {
+    map.removeLayer("Mekong_basin");
+    map.removeLayer("Mekong_line");
+    map.flyTo({
+      center: [lng, lat],
+      zoom: zoom,
+      pitch: 0,
+      bearing: 0,
+    });
+  }
+  
+  function watershed_overlay_in(map) {
+    map.flyTo({
+      zoom: 4.5,
+      center: [103.815, 21.73],
+      pitch: 0,
+      bearing: 0,
+    });
+  
+    map.addLayer({
+      id: "Mekong_basin",
+      type: "fill",
+      source: "Mekong_basin",
+      paint: {
+        "fill-color": "#fff7fb",
+        "fill-opacity": 0.6,
+        "fill-outline-color": "blue",
+      },
+    });
+  
+    map.addLayer({
+      id: "Mekong_line",
+      type: "line",
+      source: "Mekong_line",
+      paint: {
+        "line-color": {
+          property: "straherm1",
+          stops: [
+            [2, "#a6bddb"],
+            [6, "#045a8d"],
+          ],
+        },
+        "line-opacity": 1,
+        "line-width": ["get", "straherm1"],
+      },
+    });
+  }
+  
+  function sixCountriesin(map) {
+    map.removeLayer("Mekong_basin");
+    map.removeLayer("Mekong_line");
+  
+    map.flyTo({
+      zoom: 4.5,
+      center: [103.815, 21.73],
+      pitch: 0,
+      bearing: 0,
+    });
+    map.addLayer({
+      id: "Mekong_countries",
+      type: "fill",
+      source: "Mekong_countries",
+      paint: {
+        "fill-color": ["get", "Color"],
+        "fill-opacity": 0.9,
+      },
+    });
+  
+    map.addLayer({
+      id: "Mekong_basin",
+      type: "fill",
+      source: "Mekong_basin",
+      paint: {
+        "fill-color": "#fff7fb",
+        "fill-opacity": 0.6,
+        "fill-outline-color": "blue",
+      },
+    });
+  
+    map.addLayer({
+      id: "Mekong_line",
+      type: "line",
+      source: "Mekong_line",
+      paint: {
+        "line-color": {
+          property: "straherm1",
+          stops: [
+            [2, "#a6bddb"],
+            [6, "#045a8d"],
+          ],
+        },
+        "line-opacity": 1,
+        "line-width": ["get", "straherm1"],
+      },
+    });
+  
+    map.addLayer({
+      id: "Mekong_countries_centoids",
+      type: "symbol",
+      source: "Mekong_countries_centoids",
+      paint: {
+        "text-halo-width": 3,
+        "text-halo-color": "white",
+      },
+      layout: {
+        //"text-font": ["Viaoda Libre Regular", "Open Sans Regular"],
+        "symbol-placement": "point",
+        "text-anchor": "center",
+        "text-field": ["get", "Name"],
+        "text-size": 32,
+      },
+    });
+  }
+  
+  function sixCountriesOut(map) {
+    map.removeLayer("Mekong_countries");
+    map.removeLayer("Mekong_countries_centoids");
+    map.removeLayer("Mekong_basin");
+    map.removeLayer("Mekong_line");
+  }
+  
+  const lerp = (a, b, t) => {
+    if (Array.isArray(a) && Array.isArray(b)) {
+      const result = [];
+      for (let i = 0; i < Math.min(a.length, b.length); i++)
+        result[i] = a[i] * (1.0 - t) + b[i] * t;
+      return result;
+    } else {
+      return a * (1.0 - t) + b * t;
+    }
+  };
+  
+  function updateCameraPosition(position, altitude, target, map) {
+    const camera = map.getFreeCameraOptions();
+  
+    camera.position = mapboxgl.MercatorCoordinate.fromLngLat(position, altitude);
+    camera.lookAtPoint(target);
+  
+    map.setFreeCameraOptions(camera);
+  }  
 
   return (
     <Row className="g-0">
       <Map1 mapContainer={mapContainer} /> <Text1 />
-      <div id="Buffer1" />
     </Row>
   );
 };
 
 export default Section1;
 
-function watershed_overlay_out(map, lng, lat, zoom) {
-  map.removeLayer("Mekong_basin");
+function GoldenTriangleOut(map) {
   map.removeLayer("Mekong_line");
-  map.flyTo({
-    center: [lng, lat],
-    zoom: zoom,
-    pitch: 0,
-    bearing: 0,
-  });
+  map.removeLayer("Mekong_countries");
+  map.removeLayer("golden_triangle_centoid");
 }
 
-function watershed_overlay_in(map) {
+function GoldenTriangleIn(map) {
+  $(".legend").css("visibility", "hidden");
+  
   map.flyTo({
-    zoom: 4.5,
-    center: [103.815, 21.73],
-    pitch: 0,
-    bearing: 0,
+    zoom: 7.27,
+    center: [100.925916, 20.401068],
+    pitch: 55.84,
+    bearing: 27.06,
   });
-
-  map.addLayer({
-    id: "Mekong_basin",
-    type: "fill",
-    source: "Mekong_basin",
-    paint: {
-      "fill-color": "#fff7fb",
-      "fill-opacity": 0.6,
-      "fill-outline-color": "blue",
-    },
-  });
-
   map.addLayer({
     id: "Mekong_line",
     type: "line",
@@ -538,18 +657,6 @@ function watershed_overlay_in(map) {
       "line-opacity": 1,
       "line-width": ["get", "straherm1"],
     },
-  });
-}
-
-function sixCountriesin(map) {
-  map.removeLayer("Mekong_basin");
-  map.removeLayer("Mekong_line");
-
-  map.flyTo({
-    zoom: 4.5,
-    center: [103.815, 21.73],
-    pitch: 0,
-    bearing: 0,
   });
   map.addLayer({
     id: "Mekong_countries",
@@ -557,42 +664,13 @@ function sixCountriesin(map) {
     source: "Mekong_countries",
     paint: {
       "fill-color": ["get", "Color"],
-      "fill-opacity": 0.9,
+      "fill-opacity": 0.2,
     },
   });
-
   map.addLayer({
-    id: "Mekong_basin",
-    type: "fill",
-    source: "Mekong_basin",
-    paint: {
-      "fill-color": "#fff7fb",
-      "fill-opacity": 0.6,
-      "fill-outline-color": "blue",
-    },
-  });
-
-  map.addLayer({
-    id: "Mekong_line",
-    type: "line",
-    source: "Mekong_line",
-    paint: {
-      "line-color": {
-        property: "straherm1",
-        stops: [
-          [2, "#a6bddb"],
-          [6, "#045a8d"],
-        ],
-      },
-      "line-opacity": 1,
-      "line-width": ["get", "straherm1"],
-    },
-  });
-
-  map.addLayer({
-    id: "Mekong_countries_centoids",
+    id: "golden_triangle_centoid",
     type: "symbol",
-    source: "Mekong_countries_centoids",
+    source: "golden_triangle_centoid",
     paint: {
       "text-halo-width": 3,
       "text-halo-color": "white",
@@ -602,34 +680,7 @@ function sixCountriesin(map) {
       "symbol-placement": "point",
       "text-anchor": "center",
       "text-field": ["get", "Name"],
-      "text-size": 32,
+      "text-size": 24,
     },
   });
-}
-
-function sixCountriesOut(map) {
-  map.removeLayer("Mekong_countries");
-  map.removeLayer("Mekong_countries_centoids");
-  map.removeLayer("Mekong_basin");
-  map.removeLayer("Mekong_line");
-}
-
-const lerp = (a, b, t) => {
-  if (Array.isArray(a) && Array.isArray(b)) {
-    const result = [];
-    for (let i = 0; i < Math.min(a.length, b.length); i++)
-      result[i] = a[i] * (1.0 - t) + b[i] * t;
-    return result;
-  } else {
-    return a * (1.0 - t) + b * t;
-  }
-};
-
-function updateCameraPosition(position, altitude, target, map) {
-  const camera = map.getFreeCameraOptions();
-
-  camera.position = mapboxgl.MercatorCoordinate.fromLngLat(position, altitude);
-  camera.lookAtPoint(target);
-
-  map.setFreeCameraOptions(camera);
 }

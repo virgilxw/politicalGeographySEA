@@ -57,17 +57,18 @@ blockquote p {
     border-radius: 5px 10px;
 }
 
-.overlap {
+.text_overlap {
     padding-top: 50vh;
-    position: absolute;
+    position: relative;
 }
 
 #map1 {
     width: 100%;
     height: 100vh;
     background-color: red;
+    position: absolute;
 }
 
 #Buffer1 {
-    height: 700vh;
+    height: 1500vh;
 }
