@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Viaoda+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Viaoda+Libre&display=swap');
 
 body {
   margin: 0;
@@ -15,9 +15,10 @@ code {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Krona One', sans-serif;
+  font-family: 'Viaoda Libre', cursive;
 }
 
 p {
-  font-family: 'Viaoda Libre', cursive;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  z-index: 1;
 }

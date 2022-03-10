@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://odm.carto.com/tables/mekong_riversbox/public
+HostUrl=https://odm.carto.com/api/v2/sql?filename=mekong_riversbox&q=select+*+from+public.mekong_riversbox&format=geojson&bounds=&api_key=

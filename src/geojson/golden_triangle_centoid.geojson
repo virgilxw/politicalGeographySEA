@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "golden_triangle_centoid",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "PR China" }, "geometry": { "type": "Point", "coordinates": [ 100.555892379588187, 22.351211106526534 ] } },
+{ "type": "Feature", "properties": { "Name": "Myanmar" }, "geometry": { "type": "Point", "coordinates": [ 99.652370962193984, 20.992631457014074 ] } },
+{ "type": "Feature", "properties": { "Name": "Thailand" }, "geometry": { "type": "Point", "coordinates": [ 99.705131336932325, 19.238348996964003 ] } },
+{ "type": "Feature", "properties": { "Name": "Laos" }, "geometry": { "type": "Point", "coordinates": [ 101.38686828171717, 20.511193037526649 ] } }
+]
+}

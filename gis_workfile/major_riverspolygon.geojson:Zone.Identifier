@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://odm.carto.com/tables/major_riverspolygon/public
+HostUrl=https://odm.carto.com/api/v2/sql?filename=major_riverspolygon&q=select+*+from+public.major_riverspolygon&format=geojson&bounds=&api_key=
