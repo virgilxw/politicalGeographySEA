@@ -14,8 +14,24 @@ This is an assignment for my Master's course; it sought to "bring geogrpahy beyo
 - https://geo.mrcmekong.org/geowms/mapservice/mrcwmsc.html
 - https://www.arcgis.com/home/item.html?id=1ab9ca8b48344b518b2bcebca01f01b3x
 - https://odm.carto.com/tables/mekong_riversbox/public
+- https://www.naturalearthdata.com/
+- https://data.opendevelopmentmekong.net/en/dataset/cambodia-flood-prone-areas-2013/resource/b517d14f-b4f7-42a3-bb5a-28ee7cd71be8
+- https://data.opendevelopmentcambodia.net/dataset/water-bodies-in-cambodia
 
 ## Palette
+
+### Maps
+```
+#F6EDDC
+#D3C6B5
+#7DA0C0
+#c1e7ff
+#C1E5F3
+#E18169
+
+```
+
+### Website
 ```
 https://coolors.co/palette/cb997e-ddbea9-ffe8d6-b7b7a4-a5a58d-6b705c
 /* CSS HEX */

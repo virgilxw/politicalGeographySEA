@@ -1,5 +1,9 @@
 # api keys
 .env
 
+#tiffs
+*.tif
+*.tif.ovr
+
 # dependencies
 /node_modules
