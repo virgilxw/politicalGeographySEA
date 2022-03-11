@@ -237,7 +237,7 @@ const Section1 = () => {
 
   var anim;
 
-  mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_KEY;
+  mapboxgl.accessToken = "pk.eyJ1IjoidmlyZ2lsd3h3IiwiYSI6ImNsMGUyMGh6bTBlbzAzY3BvZHpoZ3h0aHcifQ.zm6vOoHcflj3SVSSiqqwrg"
 
   useEffect(() => {
     setTextHeight($("#section1").height());
