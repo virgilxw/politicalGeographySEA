@@ -16,6 +16,10 @@ import golden_triangle_centoid from "../geojson/golden_triangle_centoid.geojson"
 
 import Cam_no_flood from "../img/CAM_no_flood.png";
 import Cam_flood from "../img/CAM_flood.png";
+import Tonle_Sap_1 from "../img/Cambodia,_Tonle_Sap_IMG_3323.jpg";
+import Tonle_Sap_2 from "../img/Cambodia,_Tonle_Sap_IMG_3307.jpg";
+import Cham1 from "../img/20190920_175145.jpg";
+import MRC from "../img/Mekong_River_Commission_banderole_au_Laos.jpg";
 
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./Section1.css";
@@ -162,10 +166,10 @@ const Text1 = () => {
           </blockquote>
         </div>
       </section>
-      <section class="comparisonSection" id="section2">
+      <section className="comparisonSection" id="section2">
         <div className="comparisonImage beforeImage">
           <img src={Cam_no_flood} alt="before" />
-          <div class="caption light">
+          <div className="caption light">
             <p>Scroll down to compare Cambodia during dry and flood seasons.</p>
             <p>
               At low water levels, the river and the Tonlé Sap Lake drains into
@@ -175,7 +179,7 @@ const Text1 = () => {
         </div>
         <div className="comparisonImage afterImage">
           <img src={Cam_flood} alt="after" />
-          <div class="caption dark">
+          <div className="caption dark">
             <p>
               The severity of the Wet Monsoon season causes a unique
               hydrological phenomenon - the Mekong's discharge exceeds the
@@ -188,40 +192,114 @@ const Text1 = () => {
         </div>
       </section>
       <section id="section3">
-        <p>
-          Entire communities live floating on the Tonle Sap, depending on the
-          lake for food, water, and everything else. Fleets of houseboats owned
-          by the Cham people, an ethnic minority, are a common sight along the
-          Cambodian sections of the Mekong River. For example - many Cham
-          people, an ethnic minority, are nomadic on their fleet of houseboats,
-          migrating along the Mekong river in their fleet-villages as the season
-          change - even mooring in downtown Phnom Penh, much to the chagrin of
-          Cambodian government officials.
-        </p>
-        <p>
-          The Cambodian diet is dominated by rice and fish, with fish-related
-          activities employing 45% of the population. Cambodians are the largest
-          consumers of freshwater fish per capita in the world; fish comprise
-          76% of all animal protein consumed in Cambodia. Therefore, the food
-          security of entire countries are dependent on the ecology and
-          sustainability of the Mekong River; the flow of nutrients and
-          sediment, the lack of drought, and the yearly "heartbeat" of Mekong
-          floods.<sup>4</sup>
-        </p>
-        <p>
-          The ecological importance of the seasonal flood cycle cannot be
-          overstated. The huge lake and surrounding wetlands created by the
-          flooding support a diverse freshwater fish ecosystem, and the silt
-          deposited by the floods renews forest and farmland alike. As the
-          countries along the course of the Mekong make plans for more upstream
-          dams and navigation channels, the seasonal cycle of the lower Mekong
-          becomes threatened, as do the fisheries and farmlands dependent on it.
-          What is good for one country or region might have devastating
-          consequences for another. The governments in the area face a difficult
-          problem as they try to balance the competing interests of flood
-          control, hydroelectric power, shipping, fishing, agriculture, and
-          environmental protection<sup>5</sup>
-        </p>
+        <div className="left-content">
+          <img id="TonleSap1" className="imageToShow" src={Tonle_Sap_1} />
+          <img id="TonleSap2" className="imageToShow" src={Tonle_Sap_2} />
+          <img id="Cham1" className="imageToShow" src={Cham1} />
+          <img id="MRC" className="imageToShow" src={MRC} />
+        </div>
+        <div className="right-content">
+          <h2 className="contentMarker" data-marker-content="TonleSap1">
+            Riverine Lives
+          </h2>
+          <p>
+            Entire communities live floating on the Tonle Sap, depending on the
+            lake for food, water, and everything else. Fleets of houseboats
+            owned by the Cham people, an ethnic minority, are a common sight
+            along the Cambodian sections of the Mekong River. For example - many
+            Cham people, an ethnic minority, are nomadic on their fleet of
+            houseboats, migrating along the Mekong river in their fleet-villages
+            as the season change - even mooring in downtown Phnom Penh, much to
+            the chagrin of Cambodian government officials.
+          </p>
+          <p>
+            The Cambodian diet is dominated by rice and fish, with fish-related
+            activities employing 45% of the population. Cambodians are the
+            largest consumers of freshwater fish per capita in the world; fish
+            comprise 76% of all animal protein consumed in Cambodia. Therefore,
+            the food security of entire countries are dependent on the ecology
+            and sustainability of the Mekong River; the flow of nutrients and
+            sediment, the lack of drought, and the yearly "heartbeat" of Mekong
+            floods.<sup>4</sup>
+          </p>
+          <p>
+            The ecological importance of the seasonal flood cycle cannot be
+            overstated. The huge lake and surrounding wetlands created by the
+            flooding support a diverse freshwater fish ecosystem, and the silt
+            deposited by the floods renews forest and farmland alike. As the
+            countries along the course of the Mekong make plans for more
+            upstream dams and navigation channels, the seasonal cycle of the
+            lower Mekong becomes threatened, as do the fisheries and farmlands
+            dependent on it. What is good for one country or region might have
+            devastating consequences for another. The governments in the area
+            face a difficult problem as they try to balance the competing
+            interests of flood control, hydroelectric power, shipping, fishing,
+            agriculture, and environmental protection<sup>5</sup>
+          </p>
+          <p className="contentMarker" data-marker-content="TonleSap2">
+            Entire communities live floating on the Tonle Sap, depending on the
+            lake for food, water, and everything else. Amongst those who live
+            floating lives are the Cham people, an ethnic minority. Many Cham
+            people are nomadic, migrating along the Mekong river in their
+            fleet-villages as the season change - even mooring in downtown Phnom
+            Penh, much to the chagrin of Cambodian government officials.
+          </p>
+          <p className="contentMarker" data-marker-content="Cham1">
+            The Cham, like other ethnic minorities in Cambodia, were prosecuted
+            by the Khmer Rouge during the Cambodian genocide, which sought to
+            ethnically cleanse the Cham's Islamic identity from the
+            Khmer-Buddhist ethnostate they sought to create. Although the Cham
+            has managed to recover some of their old practices following
+            liberation, the Cham - like other communities who live on floating
+            villages - face existential questions about their lifestyle. To
+            access school, healthcare, and public services, they would have to
+            abandon their nomadic lifestyles; but buying land is expensive and
+            forbidden for people without Cambodian citizenship. Many minorities
+            were stripped of citizenship due to their ethnicity, or never
+            registered for one, through Cambodia's post-independence history
+            <sup>6</sup>
+          </p>
+          <h2 className="contentMarker" data-marker-content="MRC">
+            The Issue of Dams
+          </h2>
+          <p>
+            Transboundary water governance has complicated traditional
+            conceptualisations of resource geopolitics, given the conceptual
+            challenges in securing riparian flows which disregard territorial
+            boundaries, yet shared among nation-states.
+          </p>
+          <p>
+            The Mekong River Commission (MRC) was founded by the four countries
+            who share the Mekong River (sans China and Myanmar) to ensure the
+            fair and sustainable use and governance of the Mekong River without
+            'any harmful impacts on the signatory countries'
+          </p>
+          <p>
+            However, the MRC is primarily a monitoring association and does not
+            have any regulatory powers over sovereign nation-states. Upstream
+            countries, thus, have complete sovereignty over the river as it
+            flows through their countries. Nevertheless, China has sought to bypass the MRC, an organisation funded in part by international organisations and governments such as Germany <sup>7</sup> and the United States <sup>8</sup>, by launching their own multilateral organisation, the "Mekong-Lancang Cooperation". As a Chinese state-run newspaper puts it:
+          </p>
+          <blockquote>The Lancang-Mekong water resources cooperation affairs should be negotiated by the Lancang-Mekong countries themselves. The Lancang-Mekong Water Resources Cooperation plan should be led by our six countries, and only our six countries themselves.<sup>9</sup></blockquote>
+          <p>Some commentators have critiqued the Mekong-Lancang Cooperation as a tactic for China isolate smaller countries from international diplomatic support, accusing the organisation of being founded to cover for China's unilateral dam building.<sup>10</sup></p>
+          <p>
+            Dam-building, whilst beneficial to the host country as a way to
+            manage water resources and as a way to harvest renewable hydropower,
+            have adverse downstream effects as hydrological and sediment regimes
+            becomes altered.
+          </p>
+        </div>
+      </section>
+      <section id="section4">
+      <div className="bubble dark lefty" id="para4">
+        <h2>The Case Study of the 3S Dams</h2>
+        <p>One such example of this happening is in the “3S Region”, named for the Sesan, Sre Pok, and Sekong rivers that flow into the Mekong.</p>
+        <p>-	Due to the complicated history of Cambodia and Vietnam, Cambodia was not represented as the precursor organisation of the MRC until 1995, when the Cambodian peace process concluded and the MRC was founded. Until 1995, Cambodia was thus diplomatically dependent on Vietnam and require Vietnam's voting powers. Beyond hydrology, the current Cambodian government - in particular, its personalistic leader Hun Sen - traces their lineage to the puppet government set up by Vietnam following their invasion of Cambodia.</p>
+        <p>Cambodia, thus, did not contest the construction of the Yali Dam near the Cambodian border. Sithrith argues this is a result of Vietnam's twofold hydrological and diplomatic hegemony over Cambodia in the governance of the 3S Basin.</p>
+        <p>Vietnam has shared 'very little information and hydrological data about the Yali Dam'. This is despite the limited scope of Environmental Impact Assessments carried out before the dam's construction in 1993, not considering water quality and quantity in Cambodia's Sesan. Despite 'strenuous efforts' at negotiating against the Yali Dam, Cambodia has been hampered by 'insufficient data' and 'scientific information' to justify unjust impacts within its territory, further entrenching the upstream hegemony which Vietnam has over the 3S Basin.<sup>11</sup></p>
+        <p> The government of Cambodia itself wants to build dams. The government of Cambodia, a country with low electrification rates where firewood remains widely used, is “aggressively pursuing”  hydropower dam projects with the recent influx of Chinese technical and financial aid. Debates remain on whether these dams, built under the condition that China operates the dams and receives all revenues operated by the dam for 50 years , will benefit Cambodia economically.</p>
+        <p>The calcification of authoritarianism in the last 20 years has also disempowered rural communities in the 3S region directly experiencing the socio-ecological costs and hazards. In the village of Phluk, higher-than-expected rates of support for opposition parties led to higher eviction rates. In the village of Kbal Romeas, representatives of the ruling Cambodian People's Party are torn between toeing the party line and respecting anti-dam sentiments within their communities.</p>
+      </div>
       </section>
     </div>
   );
@@ -237,7 +315,8 @@ const Section1 = () => {
 
   var anim;
 
-  mapboxgl.accessToken = "pk.eyJ1IjoidmlyZ2lsd3h3IiwiYSI6ImNsMGUyMGh6bTBlbzAzY3BvZHpoZ3h0aHcifQ.zm6vOoHcflj3SVSSiqqwrg"
+  mapboxgl.accessToken =
+    "pk.eyJ1IjoidmlyZ2lsd3h3IiwiYSI6ImNsMGUyMGh6bTBlbzAzY3BvZHpoZ3h0aHcifQ.zm6vOoHcflj3SVSSiqqwrg";
 
   useEffect(() => {
     setTextHeight($("#section1").height());
@@ -316,9 +395,9 @@ const Section1 = () => {
       ScrollTrigger.create({
         trigger: "#map1",
         start: "top top",
-        end: "top+=10000px top",
+        end: "top+=100000px top",
         pin: true,
-        markers: true,
+        // markers: true,
         id: "map1",
       });
 
@@ -498,6 +577,96 @@ const Section1 = () => {
             0
           );
       });
+
+      gsap.defaults({ overwrite: "auto" });
+
+      gsap.set(".left-content > *", { xPercent: -50, yPercent: -50 });
+
+      // Set up our scroll trigger
+      const ST2 = ScrollTrigger.create({
+        trigger: "#section3",
+        start: "top top",
+        end: "bottom bottom",
+        onUpdate: getCurrentSection,
+        pin: ".left-content",
+      });
+
+      const contentMarkers = gsap.utils.toArray(".contentMarker");
+
+      // Set up our content behaviors
+      contentMarkers.forEach((marker) => {
+        marker.content = document.querySelector(
+          `#${marker.dataset.markerContent}`
+        );
+
+        if (marker.content.tagName === "IMG") {
+          gsap.set(marker.content, { transformOrigin: "center" });
+
+          marker.content.enter = function () {
+            gsap.fromTo(
+              marker.content,
+              { autoAlpha: 0, rotateY: -30 },
+              { duration: 0.3, autoAlpha: 1, rotateY: 0 }
+            );
+          };
+        } else if (marker.content.tagName === "BLOCKQUOTE") {
+          gsap.set(marker.content, { transformOrigin: "left center" });
+
+          marker.content.enter = function () {
+            gsap.fromTo(
+              marker.content,
+              { autoAlpha: 0, rotateY: 50 },
+              { duration: 0.3, autoAlpha: 1, rotateY: 0 }
+            );
+          };
+        }
+
+        marker.content.leave = function () {
+          gsap.to(marker.content, { duration: 0.1, autoAlpha: 0 });
+        };
+      });
+
+      // Handle the updated position
+      let lastContent;
+      function getCurrentSection() {
+        let newContent;
+        const currScroll = window.scrollY;
+
+        // Find the current section
+        contentMarkers.forEach((marker) => {
+          if (currScroll > marker.offsetTop) {
+            newContent = marker.content;
+          }
+        });
+
+        // If the current section is different than that last, animate in
+        if (
+          newContent &&
+          (lastContent == null || !newContent.isSameNode(lastContent))
+        ) {
+          // Fade out last section
+          if (lastContent) {
+            lastContent.leave();
+          }
+
+          // Animate in new section
+          newContent.enter();
+
+          lastContent = newContent;
+        }
+      }
+
+      const media = window.matchMedia("screen and (max-width: 600px)");
+      ScrollTrigger.addEventListener("refreshInit", checkSTState);
+      checkSTState();
+
+      function checkSTState() {
+        if (media.matches) {
+          ST2.disable();
+        } else {
+          ST2.enable();
+        }
+      }
     });
   });
 

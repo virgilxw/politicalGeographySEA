@@ -33,8 +33,9 @@ blockquote p {
     width: 100vw;
     padding: 10px;
     height: 10vh;
-    margin-top: 5vh;
+    margin-top: 15%;
     text-align: center;
+    opacity: 0.7;
 }
 
 .caption p {
@@ -87,10 +88,6 @@ blockquote p {
     margin: 30vh 0;
 }
 
-#section3 {
-    background-color: #FFE8D6;
-}
-
 #map1 {
     width: 100%;
     height: 100vh;
@@ -124,4 +121,50 @@ blockquote p {
     height: 100%;
     position: absolute;
     top: 0;
+}
+
+#section3 {
+    display: flex;
+    background-color: #FFE8D6;
+    padding-bottom: 5vh;
+}
+
+#section3 h2 {
+    display: flex;
+    padding-top: 20vh;
+}
+
+#section3>* {
+    width: 50%;
+}
+
+.right-content {
+    padding-right: 15px;
+}
+
+.left-content {
+    height: 100vh;
+    position: relative;
+}
+
+.left-content>* {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    visibility: hidden;
+    width: 40vw;
+}
+
+#section4 {
+    margin-top: 20vh;
+}
+
+@media screen and (max-width: 800px) {
+    .left-content {
+        display: none;
+    }
+    .right-content {
+        padding-left: 15px;
+    }
 }
