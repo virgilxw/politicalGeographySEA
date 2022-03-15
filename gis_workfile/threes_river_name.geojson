@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "threes_river_name",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "Sekong River" }, "geometry": { "type": "Point", "coordinates": [ 106.220063850336544, 14.556420339632512 ] } },
+{ "type": "Feature", "properties": { "name": "Sesan River" }, "geometry": { "type": "Point", "coordinates": [ 106.794638752020873, 13.743133159953734 ] } },
+{ "type": "Feature", "properties": { "name": "Srepok River" }, "geometry": { "type": "Point", "coordinates": [ 107.230427445568893, 12.940948876925862 ] } }
+]
+}

@@ -21,6 +21,7 @@ This is an assignment for my Master's course; it sought to "bring geogrpahy beyo
 - https://www.naturalearthdata.com/
 - https://data.opendevelopmentmekong.net/en/dataset/cambodia-flood-prone-areas-2013/resource/b517d14f-b4f7-42a3-bb5a-28ee7cd71be8
 - https://data.opendevelopmentcambodia.net/dataset/water-bodies-in-cambodia
+- https://data.opendevelopmentcambodia.net/dataset/hydropower-dams-in-the-mekong-region-in-2022
 
 ## Palette
 

@@ -13,6 +13,10 @@ import Mekong_line from "../geojson/Mekong_line_filtered.geojson";
 import Mekong_countries from "../geojson/Mekong_countries.geojson";
 import Mekong_countries_centoids from "../geojson/Mekong_countries_centoids.geojson";
 import golden_triangle_centoid from "../geojson/golden_triangle_centoid.geojson";
+import threes_basin from "../geojson/threes_basin.geojson";
+import threes_river from "../geojson/threes_rivers.geojson";
+import threes_river_names from "../geojson/threes_river_names.geojson";
+import hydro_power_dams from "../geojson/hydro_power_dams_2022.geojson";
 
 import Cam_no_flood from "../img/CAM_no_flood.png";
 import Cam_flood from "../img/CAM_flood.png";
@@ -27,8 +31,11 @@ import "./Section1.css";
 const Map1 = ({ mapContainer }) => {
   return (
     <div id="map1" ref={mapContainer} className="map-container">
-      <div className="legend">
-        <ImLocation /> <p className="legend-text"> </p>
+      <div className="legend"  id="yunan">
+        <ImLocation /> <p className="legend-text">Mei Li Snow Mountains, Yunan, China</p>
+      </div>
+      <div className="legend" id="damslegend">
+        <span class="circle" /> <p className="legend-text">Circles indicates hydropower plants; radius is logarithmic and indicates hydropower output</p>
       </div>
     </div>
   );
@@ -193,14 +200,14 @@ const Text1 = () => {
       </section>
       <section id="section3">
         <div className="left-content">
-          <img id="TonleSap1" className="imageToShow" src={Tonle_Sap_1} />
-          <img id="TonleSap2" className="imageToShow" src={Tonle_Sap_2} />
-          <img id="Cham1" className="imageToShow" src={Cham1} />
-          <img id="MRC" className="imageToShow" src={MRC} />
+          <img id="TonleSap1" className="imageToShow" src={Tonle_Sap_1} alt="scrollimages"/>
+          <img id="TonleSap2" className="imageToShow" src={Tonle_Sap_2} alt="scrollimages"/>
+          <img id="Cham1" className="imageToShow" src={Cham1} alt="scrollimages"/>
+          <img id="MRC" className="imageToShow" src={MRC} alt="scrollimages"/>
         </div>
         <div className="right-content">
           <h2 className="contentMarker" data-marker-content="TonleSap1">
-            Riverine Lives
+            Riparian Lives
           </h2>
           <p>
             Entire communities live floating on the Tonle Sap, depending on the
@@ -259,7 +266,7 @@ const Text1 = () => {
             registered for one, through Cambodia's post-independence history
             <sup>6</sup>
           </p>
-          <h2 className="contentMarker" data-marker-content="MRC">
+          <h2 className="contentMarker" data-marker-content="MRC" id="para6Trigger">
             The Issue of Dams
           </h2>
           <p>
@@ -291,10 +298,12 @@ const Text1 = () => {
         </div>
       </section>
       <section id="section4">
-      <div className="bubble dark lefty" id="para4">
+      <div className="bubble dark lefty" id="para6Dams">
         <h2>The Case Study of the 3S Dams</h2>
-        <p>One such example of this happening is in the “3S Region”, named for the Sesan, Sre Pok, and Sekong rivers that flow into the Mekong.</p>
-        <p>-	Due to the complicated history of Cambodia and Vietnam, Cambodia was not represented as the precursor organisation of the MRC until 1995, when the Cambodian peace process concluded and the MRC was founded. Until 1995, Cambodia was thus diplomatically dependent on Vietnam and require Vietnam's voting powers. Beyond hydrology, the current Cambodian government - in particular, its personalistic leader Hun Sen - traces their lineage to the puppet government set up by Vietnam following their invasion of Cambodia.</p>
+        <p>One such example of this happening is in the “3S Region”, named for the Sesan, Sre Pok, and Sekong rivers that originate in the Vietnamese highlands before flowing into Cambodia.</p>
+        <p>Due to the complicated history of Cambodia and Vietnam, Cambodia was not represented as the precursor organisation of the MRC until 1995, when the Cambodian peace process concluded and the MRC was founded. Until 1995, Cambodia was thus diplomatically dependent on Vietnam and require Vietnam's voting powers. Beyond hydrology, the current Cambodian government - in particular, its personalistic leader Hun Sen - traces their lineage to the puppet government set up by Vietnam following their invasion of Cambodia.</p>
+        </div>
+        <div className="bubble dark righty">
         <p>Cambodia, thus, did not contest the construction of the Yali Dam near the Cambodian border. Sithrith argues this is a result of Vietnam's twofold hydrological and diplomatic hegemony over Cambodia in the governance of the 3S Basin.</p>
         <p>Vietnam has shared 'very little information and hydrological data about the Yali Dam'. This is despite the limited scope of Environmental Impact Assessments carried out before the dam's construction in 1993, not considering water quality and quantity in Cambodia's Sesan. Despite 'strenuous efforts' at negotiating against the Yali Dam, Cambodia has been hampered by 'insufficient data' and 'scientific information' to justify unjust impacts within its territory, further entrenching the upstream hegemony which Vietnam has over the 3S Basin.<sup>11</sup></p>
         <p> The government of Cambodia itself wants to build dams. The government of Cambodia, a country with low electrification rates where firewood remains widely used, is “aggressively pursuing”  hydropower dam projects with the recent influx of Chinese technical and financial aid. Debates remain on whether these dams, built under the condition that China operates the dams and receives all revenues operated by the dam for 50 years , will benefit Cambodia economically.</p>
@@ -320,6 +329,7 @@ const Section1 = () => {
 
   useEffect(() => {
     setTextHeight($("#section1").height());
+    const contentMarkers = gsap.utils.toArray(".contentMarker");
 
     const map = new mapboxgl.Map({
       container: mapContainer.current,
@@ -349,6 +359,21 @@ const Section1 = () => {
       map.addSource("golden_triangle_centoid", {
         type: "geojson",
         data: golden_triangle_centoid,
+      }); map.addSource("threes_basin", {
+        type: "geojson",
+        data: threes_basin,
+      });
+      map.addSource("threes_river", {
+        type: "geojson",
+        data: threes_river,
+      });
+      map.addSource("threes_river_names", {
+        type: "geojson",
+        data: threes_river_names,
+      });
+      map.addSource("hydro_power_dams", {
+        type: "geojson",
+        data: hydro_power_dams,
       });
 
       map.addSource("mapbox-dem", {
@@ -579,6 +604,7 @@ const Section1 = () => {
       });
 
       gsap.defaults({ overwrite: "auto" });
+      ScrollTrigger.refresh()
 
       gsap.set(".left-content > *", { xPercent: -50, yPercent: -50 });
 
@@ -590,8 +616,6 @@ const Section1 = () => {
         onUpdate: getCurrentSection,
         pin: ".left-content",
       });
-
-      const contentMarkers = gsap.utils.toArray(".contentMarker");
 
       // Set up our content behaviors
       contentMarkers.forEach((marker) => {
@@ -667,6 +691,95 @@ const Section1 = () => {
           ST2.enable();
         }
       }
+      gsap.to("#para6Dams", {
+        autoAlpha: 1,
+        ease: "power1.in",
+        scrollTrigger: {
+          trigger: "#para6Dams",
+          start: "top 70%",
+          end: "top 30%",
+          scrub: true,
+          // markers: true,
+          id: "#para6Dams opacity",
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: "#para6Trigger",
+        start: "top 40%",
+        onEnter: () => {          
+          map.flyTo({
+            zoom: 7.42,
+            center: [106.084986, 12.999985],
+            pitch: 49.47,
+            bearing: 0.00,
+          });
+          map.addLayer({
+            id: "threes_basin",
+            type: "fill",
+            source: "threes_basin",
+            paint: {
+              "fill-color": ["get", "color"],
+              "fill-opacity": 0.3,
+              "fill-outline-color": "blue",
+            },
+          });
+          map.addLayer({
+            id: "threes_river",
+            type: "line",
+            source: "threes_river",
+            paint: {
+              "line-color": "red",
+              "line-opacity": 1,
+              "line-width": 3
+            },
+          });
+          map.addLayer({
+            id: "threes_river_names",
+            type: "symbol",
+            source: "threes_river_names",
+            paint: {
+              "text-halo-width": 3,
+              "text-halo-color": "white",
+            },
+            layout: {
+              //"text-font": ["Viaoda Libre Regular", "Open Sans Regular"],
+              "symbol-placement": "point",
+              "text-anchor": "center",
+              "text-field": ["get", "name"],
+              "text-size": 24,
+            },
+          });
+
+          map.addLayer({
+            'id': 'hydro_power_dams',
+            'type': 'circle',
+            'source': 'hydro_power_dams',
+            'paint': {
+            'circle-radius': ["*", ["log10", ['number',['get', 'Mean Annua']]], 4],
+            'circle-color': "#7DA0C0",
+            'circle-stroke-color': "black",
+            'circle-stroke-width': 4
+            }
+          });
+
+          $("#damslegend").css("visibility", "visible");
+        },
+        onLeaveBack: () => {
+          map.fitBounds([
+            [102.346509255666902, 10.4227359886091246],
+            [107.6363823439247085, 14.708618006184869],
+          ]);
+          map.removeLayer("threes_basin")
+          map.removeLayer("threes_river")
+          map.removeLayer("river_name")
+          map.removeLayer("hydro_power_dams")
+          $("#damslegend").css("visibility", "hidden");
+        },
+        markers: true,
+        id: "para6Trigger",
+      });
+
     });
   });
 
@@ -678,9 +791,7 @@ const Section1 = () => {
       bearing: 153.99,
     });
 
-    $(".legend").css("visibility", "visible");
-    $(".legend-text").empty();
-    $(".legend-text").append("Mei Li Snow Mountains, Yunan, China");
+    $("#yunan").css("visibility", "visible");
 
     let animationIndex = 0;
     let animationTime = 0.0;
@@ -906,7 +1017,7 @@ function GoldenTriangleOut(map) {
 }
 
 function GoldenTriangleIn(map) {
-  $(".legend").css("visibility", "hidden");
+  $("#yunan").css("visibility", "hidden");
 
   map.flyTo({
     zoom: 7.27,
