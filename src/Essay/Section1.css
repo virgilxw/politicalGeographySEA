@@ -75,6 +75,14 @@ blockquote p {
     padding: 10px;
     text-align: center;
     border-radius: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.legend p {
+    display: inline-block;
 }
 
 .text_overlap {
@@ -123,18 +131,25 @@ blockquote p {
     top: 0;
 }
 
-#section3 {
+.textscreen {
     display: flex;
     background-color: #FFE8D6;
     padding-bottom: 5vh;
 }
 
-#section3 h2 {
+.textscreen2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textscreen h2 {
     display: flex;
     padding-top: 20vh;
 }
 
-#section3>* {
+.textscreen>* {
     width: 50%;
 }
 
@@ -170,11 +185,39 @@ blockquote p {
 }
 
 .circle {
-    display: block;
-    margin: auto;
-    background: #7DA0C0;
+    display: inline-block;
     width: 25px;
     height: 25px;
     border-radius: 50%;
     border: 4px solid black;
+}
+
+#completed {
+    background: #198038
+}
+
+#construction {
+    background: #b28600
+}
+
+#planned {
+    background: #fa4d56
+}
+
+#dams {
+    background: #7DA0C0;
+    margin: auto;
+}
+
+#damsconstructionlegend {
+    top: 50%;
+    left: 90%;
+}
+
+.r {
+    display: flex;
+}
+
+.r * {
+    padding: 2px;
 }

@@ -31,11 +31,36 @@ import "./Section1.css";
 const Map1 = ({ mapContainer }) => {
   return (
     <div id="map1" ref={mapContainer} className="map-container">
-      <div className="legend"  id="yunan">
-        <ImLocation /> <p className="legend-text">Mei Li Snow Mountains, Yunan, China</p>
+      <div className="legend" id="yunan">
+        <span className="r">
+          <ImLocation />
+        </span>
+        <p className="legend-text">Mei Li Snow Mountains, Yunan, China</p>
       </div>
       <div className="legend" id="damslegend">
-        <span class="circle" /> <p className="legend-text">Circles indicates hydropower plants; radius is logarithmic and indicates hydropower output</p>
+        <span className="r">
+          <span className="circle" id="dams" />
+        </span>
+        <p className="legend-text">
+          Circles indicates hydropower plants; radius is logarithmic and
+          indicates hydropower output
+        </p>
+      </div>
+      <div className="legend" id="damsconstructionlegend">
+        <span className="r">
+          <span className="circle" id="completed" />{" "}
+          <p>Completed and Operational</p>
+        </span>
+        <span className="r">
+          <span className="circle" id="construction" />{" "}
+          <p>Under Construction</p>
+        </span>
+        <span className="r">
+          <span className="circle" id="planned" /> <p>Planned</p>
+        </span>
+        <span className="r">
+          <p className="legend-text">Radius indicates hydropower output</p>
+        </span>
       </div>
     </div>
   );
@@ -198,12 +223,27 @@ const Text1 = () => {
           </div>
         </div>
       </section>
-      <section id="section3">
+      <section className="textscreen" id="section3">
         <div className="left-content">
-          <img id="TonleSap1" className="imageToShow" src={Tonle_Sap_1} alt="scrollimages"/>
-          <img id="TonleSap2" className="imageToShow" src={Tonle_Sap_2} alt="scrollimages"/>
-          <img id="Cham1" className="imageToShow" src={Cham1} alt="scrollimages"/>
-          <img id="MRC" className="imageToShow" src={MRC} alt="scrollimages"/>
+          <img
+            id="TonleSap1"
+            className="imageToShow"
+            src={Tonle_Sap_1}
+            alt="scrollimages"
+          />
+          <img
+            id="TonleSap2"
+            className="imageToShow"
+            src={Tonle_Sap_2}
+            alt="scrollimages"
+          />
+          <img
+            id="Cham1"
+            className="imageToShow"
+            src={Cham1}
+            alt="scrollimages"
+          />
+          <img id="MRC" className="imageToShow" src={MRC} alt="scrollimages" />
         </div>
         <div className="right-content">
           <h2 className="contentMarker" data-marker-content="TonleSap1">
@@ -229,7 +269,7 @@ const Text1 = () => {
             sediment, the lack of drought, and the yearly "heartbeat" of Mekong
             floods.<sup>4</sup>
           </p>
-          <p>
+          <p className="contentMarker" data-marker-content="TonleSap2">
             The ecological importance of the seasonal flood cycle cannot be
             overstated. The huge lake and surrounding wetlands created by the
             flooding support a diverse freshwater fish ecosystem, and the silt
@@ -243,7 +283,7 @@ const Text1 = () => {
             interests of flood control, hydroelectric power, shipping, fishing,
             agriculture, and environmental protection<sup>5</sup>
           </p>
-          <p className="contentMarker" data-marker-content="TonleSap2">
+          <p>
             Entire communities live floating on the Tonle Sap, depending on the
             lake for food, water, and everything else. Amongst those who live
             floating lives are the Cham people, an ethnic minority. Many Cham
@@ -266,7 +306,7 @@ const Text1 = () => {
             registered for one, through Cambodia's post-independence history
             <sup>6</sup>
           </p>
-          <h2 className="contentMarker" data-marker-content="MRC" id="para6Trigger">
+          <h2 id="para6Trigger">
             The Issue of Dams
           </h2>
           <p>
@@ -281,14 +321,29 @@ const Text1 = () => {
             fair and sustainable use and governance of the Mekong River without
             'any harmful impacts on the signatory countries'
           </p>
-          <p>
+          <p className="contentMarker" data-marker-content="MRC">
             However, the MRC is primarily a monitoring association and does not
             have any regulatory powers over sovereign nation-states. Upstream
             countries, thus, have complete sovereignty over the river as it
-            flows through their countries. Nevertheless, China has sought to bypass the MRC, an organisation funded in part by international organisations and governments such as Germany <sup>7</sup> and the United States <sup>8</sup>, by launching their own multilateral organisation, the "Mekong-Lancang Cooperation". As a Chinese state-run newspaper puts it:
+            flows through their countries. Nevertheless, China has sought to
+            bypass the MRC, an organisation funded in part by international
+            organisations and governments such as Germany <sup>7</sup> and the
+            United States <sup>8</sup>, by launching their own multilateral
+            organisation, the "Mekong-Lancang Cooperation". As a Chinese
+            state-run newspaper puts it:
           </p>
-          <blockquote>The Lancang-Mekong water resources cooperation affairs should be negotiated by the Lancang-Mekong countries themselves. The Lancang-Mekong Water Resources Cooperation plan should be led by our six countries, and only our six countries themselves.<sup>9</sup></blockquote>
-          <p>Some commentators have critiqued the Mekong-Lancang Cooperation as a tactic for China isolate smaller countries from international diplomatic support, accusing the organisation of being founded to cover for China's unilateral dam building.<sup>10</sup></p>
+          <blockquote>
+            The Lancang-Mekong water resources cooperation affairs should be
+            negotiated by the Lancang-Mekong countries themselves. The
+            Lancang-Mekong Water Resources Cooperation plan should be led by our
+            six countries, and only our six countries themselves.<sup>9</sup>
+          </blockquote>
+          <p>
+            Some commentators have critiqued the Mekong-Lancang Cooperation as a
+            tactic for China isolate smaller countries from international
+            diplomatic support, accusing the organisation of being founded to
+            cover for China's unilateral dam building.<sup>10</sup>
+          </p>
           <p>
             Dam-building, whilst beneficial to the host country as a way to
             manage water resources and as a way to harvest renewable hydropower,
@@ -298,18 +353,103 @@ const Text1 = () => {
         </div>
       </section>
       <section id="section4">
-      <div className="bubble dark lefty" id="para6Dams">
-        <h2>The Case Study of the 3S Dams</h2>
-        <p>One such example of this happening is in the “3S Region”, named for the Sesan, Sre Pok, and Sekong rivers that originate in the Vietnamese highlands before flowing into Cambodia.</p>
-        <p>Due to the complicated history of Cambodia and Vietnam, Cambodia was not represented as the precursor organisation of the MRC until 1995, when the Cambodian peace process concluded and the MRC was founded. Until 1995, Cambodia was thus diplomatically dependent on Vietnam and require Vietnam's voting powers. Beyond hydrology, the current Cambodian government - in particular, its personalistic leader Hun Sen - traces their lineage to the puppet government set up by Vietnam following their invasion of Cambodia.</p>
+        <div className="bubble dark lefty" id="para6Dams">
+          <h2>The Case Study of the 3S Dams</h2>
+          <p>
+            One such example of this happening is in the “3S Region”, named for
+            the Sesan, Sre Pok, and Sekong rivers that originate in the
+            Vietnamese highlands before flowing into Cambodia.
+          </p>
+          <p>
+            Due to the complicated history of Cambodia and Vietnam, Cambodia was
+            not represented as the precursor organisation of the MRC until 1995,
+            when the Cambodian peace process concluded and the MRC was founded.
+            Until 1995, Cambodia was thus diplomatically dependent on Vietnam
+            and require Vietnam's voting powers. Beyond hydrology, the current
+            Cambodian government - in particular, its personalistic leader Hun
+            Sen - traces their lineage to the puppet government set up by
+            Vietnam following their invasion of Cambodia.
+          </p>
         </div>
-        <div className="bubble dark righty">
-        <p>Cambodia, thus, did not contest the construction of the Yali Dam near the Cambodian border. Sithrith argues this is a result of Vietnam's twofold hydrological and diplomatic hegemony over Cambodia in the governance of the 3S Basin.</p>
-        <p>Vietnam has shared 'very little information and hydrological data about the Yali Dam'. This is despite the limited scope of Environmental Impact Assessments carried out before the dam's construction in 1993, not considering water quality and quantity in Cambodia's Sesan. Despite 'strenuous efforts' at negotiating against the Yali Dam, Cambodia has been hampered by 'insufficient data' and 'scientific information' to justify unjust impacts within its territory, further entrenching the upstream hegemony which Vietnam has over the 3S Basin.<sup>11</sup></p>
-        <p> The government of Cambodia itself wants to build dams. The government of Cambodia, a country with low electrification rates where firewood remains widely used, is “aggressively pursuing”  hydropower dam projects with the recent influx of Chinese technical and financial aid. Debates remain on whether these dams, built under the condition that China operates the dams and receives all revenues operated by the dam for 50 years , will benefit Cambodia economically.</p>
-        <p>The calcification of authoritarianism in the last 20 years has also disempowered rural communities in the 3S region directly experiencing the socio-ecological costs and hazards. In the village of Phluk, higher-than-expected rates of support for opposition parties led to higher eviction rates. In the village of Kbal Romeas, representatives of the ruling Cambodian People's Party are torn between toeing the party line and respecting anti-dam sentiments within their communities.</p>
-      </div>
+        <div className="bubble dark righty" id="para7Yali">
+          <p>
+            Cambodia, thus, did not contest the construction of the Yali Dam
+            near the Cambodian border. Sithrith argues this is a result of
+            Vietnam's twofold hydrological and diplomatic hegemony over Cambodia
+            in the governance of the 3S Basin.
+          </p>
+          <p>
+            Vietnam has shared 'very little information and hydrological data
+            about the Yali Dam'. This is despite the limited scope of
+            Environmental Impact Assessments carried out before the dam's
+            construction in 1993, not considering water quality and quantity in
+            Cambodia's Sesan. Despite 'strenuous efforts' at negotiating against
+            the Yali Dam, Cambodia has been hampered by 'insufficient data' and
+            'scientific information' to justify unjust impacts within its
+            territory, further entrenching the upstream hegemony which Vietnam
+            has over the 3S Basin.<sup>11</sup>
+          </p>
+        </div>
+        <div className="bubble dark lefty" id="para8CambodianDams">
+          <p>
+            The government of Cambodia itself wants to build dams. The
+            government of Cambodia, a country with low electrification rates
+            where firewood remains widely used, is “aggressively pursuing”
+            hydropower dam projects with the recent influx of Chinese technical
+            and financial aid. Debates remain on whether these dams, built under
+            the condition that China operates the dams and receives all revenues
+            operated by the dam for 50 years , will benefit Cambodia
+            economically.<sup>12</sup>
+          </p>
+          <p>
+            The calcification of authoritarianism in the last 20 years has also
+            disempowered rural communities in the 3S region directly
+            experiencing the socio-ecological costs and hazards. In the village
+            of Phluk, higher-than-expected rates of support for opposition
+            parties led to higher eviction rates. In the village of Kbal Romeas,
+            representatives of the ruling Cambodian People's Party are torn
+            between toeing the party line and respecting anti-dam sentiments
+            within their communities. <sup>13</sup>
+          </p>
+        </div>
+        <div className="bubble dark righty" id="para9alldams">
+          <p>
+            What is happening in Cambodia is happening in every country that the
+            Mekong flows through. Dam building, a point of contention between
+            Southeast Asian Mekong states and China during the 1990s, has now
+            been taken on as a political project in almost every Mekong country
+            with the influx of Chinese developmental aid and expertise.
+          </p>
+        </div>
       </section>
+      <section className="textscreen textscreen2" id="section5">
+        <h2>Conclusion</h2>
+        <p>The conflict over dams is often framed as a technical question: how will a dam affect the river's hydrology? How much land will it flood and how valuable is the land? What does a country gain from being the “battery of Asia”? How can we quantify the damage inflicted by the dam and weigh it against its benefits?</p>
+        <p>Human beings and their interests, if they are to be considered at all, must be converted to a commensurable and fungible unit of utility - in most cases, money. </p>
+        <p>Such narrow framing, however, paints over other forms of understanding and masks the people who are most affected by these hydropower projects. Cost-benefit assessments made by national capitals and Western cities where consultancies operate often leave out the very real impacts of locals who have to abandon their ancestral lands, people who have a level of understanding of the river that economists or hydrologists may not capture.</p>
+        <p>The shock, for example, of a local discovering the Mekong is flowing clear, free from sediment, for the first time in their lives, of having to plan for rapid unexpected changes in water level or the creation of man-made droughts as dams trap the river and fill their reservoirs</p>
+        <p>Local knowledge is less a hierarchy as a leaderless social network. It is located in communities and spans political borders. They are found in NGOs, and civil society, and within people's lived experiences, customs, folklore, and oral history. They are spread by word of mouth and by mass media. Deprived of formal power, the champions of folk knowledge form transnational linkages to pool knowledge and share on best practices, and lobby academics to turn local knowledge into technical knowledge.</p>
+        <p>To truly grasp and tackle the issues of dam-building in the Mekong, then, we must find a way to integrate local knowledges into decision-making structures.</p>
+      </section>
+      
+    <section className="textscreen textscreen2">
+      <h2>Sources</h2>
+      <ol>
+        <li> https://www.mrcmekong.org/about/mekong-basin/people/</li>
+        <li> http://www.mwr.gov.cn/xw/slyw/201804/t20180409_1034896.html</li>
+        <li>https://nhess.copernicus.org/preprints/nhess-2021-65/nhess-2021-65.pdf        </li>
+        <li> https://pubs.iclarm.net/resource_centre/3494-11879-1-PB.pdf</li>
+        <li>https://earthobservatory.nasa.gov/images/3483/tonle-sap-wetlands-cambodia    </li>
+        <li>https://www.aljazeera.com/news/2019/12/13/beautifying-phnom-penh-muslim-cham-face-eviction-in-cambodia</li>
+        <li> https://www.mrcmekong.org/news-and-events/news/pr-09-12-2021/</li>
+        <li> https://www.mrcmekong.org/news-and-events/news/pr-18112021/</li>
+        <li> https://world.huanqiu.com/article/9CaKrnKooZN</li>
+        <li> https://thediplomat.com/2018/12/the-trouble-with-the-lancang-mekong-cooperation-forum/</li>
+        <li>https://iwaponline.com/wp/article-abstract/18/6/1420/20520/Damming-the-Mekong-tributaries-water-security-and</li>
+        <li>https://www.eastasiaforum.org/2018/08/15/cambodias-chinese-dam-conundrum/</li>
+        <li>https://iwaponline.com/wp/article-abstract/18/6/1420/20520/Damming-the-Mekong-tributaries-water-security-and</li>
+      </ol>
+    </section>
     </div>
   );
 };
@@ -359,7 +499,8 @@ const Section1 = () => {
       map.addSource("golden_triangle_centoid", {
         type: "geojson",
         data: golden_triangle_centoid,
-      }); map.addSource("threes_basin", {
+      });
+      map.addSource("threes_basin", {
         type: "geojson",
         data: threes_basin,
       });
@@ -420,9 +561,10 @@ const Section1 = () => {
       ScrollTrigger.create({
         trigger: "#map1",
         start: "top top",
-        end: "top+=100000px top",
+        endTrigger: "#section5",
+        end: "bottom bottom",
         pin: true,
-        // markers: true,
+        markers: true,
         id: "map1",
       });
 
@@ -495,9 +637,13 @@ const Section1 = () => {
         trigger: "#para1GreatRiver",
         start: "top 70%",
         onEnter: () => {
+          stop(anim);
+          anim = undefined;
           watershed_overlay_in(map);
         },
         onLeaveBack: () => {
+          stop(anim);
+          anim = undefined;
           watershed_overlay_out(map, lng, lat, zoom);
         },
         // markers: true,
@@ -508,9 +654,13 @@ const Section1 = () => {
         trigger: "#para2Countries",
         start: "top 70%",
         onEnter: () => {
+          stop(anim);
+          anim = undefined;
           sixCountriesin(map);
         },
         onLeaveBack: () => {
+          stop(anim);
+          anim = undefined;
           sixCountriesOut(map);
           watershed_overlay_in(map);
         },
@@ -545,6 +695,8 @@ const Section1 = () => {
           GoldenTriangleIn(map);
         },
         onLeaveBack: () => {
+          stop(anim);
+          anim = undefined;
           GoldenTriangleOut(map);
           SourceIn(map);
         },
@@ -555,13 +707,17 @@ const Section1 = () => {
         trigger: "#para5Cambodia",
         start: "top 40%",
         onEnter: () => {
+          stop(anim);
+          anim = undefined;
           map.removeLayer("Mekong_countries");
           map.fitBounds([
-            [102.346509255666902, 10.4227359886091246],
+            [102.346509255666902, 9.5],
             [107.6363823439247085, 14.708618006184869],
           ]);
         },
         onLeaveBack: () => {
+          stop(anim);
+          anim = undefined;
           GoldenTriangleIn(map);
         },
         // markers: true,
@@ -604,7 +760,7 @@ const Section1 = () => {
       });
 
       gsap.defaults({ overwrite: "auto" });
-      ScrollTrigger.refresh()
+      ScrollTrigger.refresh();
 
       gsap.set(".left-content > *", { xPercent: -50, yPercent: -50 });
 
@@ -704,82 +860,130 @@ const Section1 = () => {
         },
       });
 
+      gsap.to("#para7Yali", {
+        autoAlpha: 1,
+        ease: "power1.in",
+        scrollTrigger: {
+          trigger: "#para7Yali",
+          start: "top 70%",
+          end: "top 30%",
+          scrub: true,
+          // markers: true,
+          id: "#para7Yali opacity",
+        },
+      });
+      gsap.to("#para8CambodianDams", {
+        autoAlpha: 1,
+        ease: "power1.in",
+        scrollTrigger: {
+          trigger: "#para8CambodianDams",
+          start: "top 70%",
+          end: "top 30%",
+          scrub: true,
+          // markers: true,
+          id: "#para8CambodianDams opacity",
+        },
+      });
+
+      gsap.to("#para9alldams", {
+        autoAlpha: 1,
+        ease: "power1.in",
+        scrollTrigger: {
+          trigger: "#para8alldams",
+          start: "top 70%",
+          end: "top 30%",
+          scrub: true,
+          // markers: true,
+          id: "#para8alldams",
+        },
+      });
+
       ScrollTrigger.create({
         trigger: "#para6Trigger",
         start: "top 40%",
-        onEnter: () => {          
-          map.flyTo({
-            zoom: 7.42,
-            center: [106.084986, 12.999985],
-            pitch: 49.47,
-            bearing: 0.00,
-          });
-          map.addLayer({
-            id: "threes_basin",
-            type: "fill",
-            source: "threes_basin",
-            paint: {
-              "fill-color": ["get", "color"],
-              "fill-opacity": 0.3,
-              "fill-outline-color": "blue",
-            },
-          });
-          map.addLayer({
-            id: "threes_river",
-            type: "line",
-            source: "threes_river",
-            paint: {
-              "line-color": "red",
-              "line-opacity": 1,
-              "line-width": 3
-            },
-          });
-          map.addLayer({
-            id: "threes_river_names",
-            type: "symbol",
-            source: "threes_river_names",
-            paint: {
-              "text-halo-width": 3,
-              "text-halo-color": "white",
-            },
-            layout: {
-              //"text-font": ["Viaoda Libre Regular", "Open Sans Regular"],
-              "symbol-placement": "point",
-              "text-anchor": "center",
-              "text-field": ["get", "name"],
-              "text-size": 24,
-            },
-          });
-
-          map.addLayer({
-            'id': 'hydro_power_dams',
-            'type': 'circle',
-            'source': 'hydro_power_dams',
-            'paint': {
-            'circle-radius': ["*", ["log10", ['number',['get', 'Mean Annua']]], 4],
-            'circle-color': "#7DA0C0",
-            'circle-stroke-color': "black",
-            'circle-stroke-width': 4
-            }
-          });
-
-          $("#damslegend").css("visibility", "visible");
+        onEnter: () => {
+          stop(anim);
+          anim = undefined;
+          threesin(map);
         },
         onLeaveBack: () => {
-          map.fitBounds([
-            [102.346509255666902, 10.4227359886091246],
-            [107.6363823439247085, 14.708618006184869],
-          ]);
-          map.removeLayer("threes_basin")
-          map.removeLayer("threes_river")
-          map.removeLayer("river_name")
-          map.removeLayer("hydro_power_dams")
-          $("#damslegend").css("visibility", "hidden");
+          stop(anim);
+          anim = undefined;
+          threesout(map);
         },
-        markers: true,
+        // markers: true,
         id: "para6Trigger",
       });
 
+      ScrollTrigger.create({
+        trigger: "#para7Yali",
+        start: "top 40%",
+        onEnter: () => {
+          stop(anim);
+          anim = undefined;
+          threesout(map);
+          map.flyTo({
+            zoom: 14.53,
+            center: [107.828087, 14.229384],
+            pitch: 59.27,
+            bearing: 19.96,
+          });
+        },
+        onLeaveBack: () => {
+          stop(anim);
+          anim = undefined;
+          threesin(map);
+        },
+        // markers: true,
+        id: "para7Yali",
+      });
+
+      ScrollTrigger.create({
+        trigger: "#para8CambodianDams",
+        start: "top 75%",
+        onEnter: () => {
+          stop(anim);
+          anim = undefined;
+          Cambodiandamsin(map);
+        },
+        onLeaveBack: () => {
+          stop(anim);
+          anim = undefined;
+          map.flyTo({
+            zoom: 14.53,
+            center: [107.828087, 14.229384],
+            pitch: 59.27,
+            bearing: 19.96,
+          });
+          map.removeLayer("hydro_power_dams");
+          $("#damsconstructionlegend").css("visibility", "hidden");
+        },
+        //markers: true,
+        id: "para8CambodianDams",
+      });
+
+      ScrollTrigger.create({
+        trigger: "#para9alldams",
+        start: "top 75%",
+        onEnter: () => {
+          stop(anim);
+          anim = undefined;
+          map.fitBounds(
+            [
+              [97, 12.28],
+              [108.041, 31.87],
+            ],
+            { pitch: 0, bearing: 0 }
+          );
+        },
+        onLeaveBack: () => {
+          stop(anim);
+          anim = undefined;
+          Cambodiandamsin(map);
+        },
+        //markers: true,
+        id: "para8alldams",
+      });
     });
   });
 
@@ -1009,6 +1213,107 @@ const Section1 = () => {
 };
 
 export default Section1;
+
+function Cambodiandamsin(map) {
+  map.fitBounds([
+    [102.346509255666902, 10.4227359886091246],
+    [107.6363823439247085, 14.708618006184869],
+  ]);
+  map.addLayer({
+    id: "hydro_power_dams",
+    type: "circle",
+    source: "hydro_power_dams",
+    paint: {
+      "circle-radius": ["*", ["log10", ["number", ["get", "Mean Annua"]]], 4],
+      "circle-color": [
+        "case",
+        ["==", ["get", "Status"], "In Operation"],
+        ["string", "#198038"],
+        ["==", ["get", "Status"], "Under construction"],
+        ["string", "#b28600"],
+        ["==", ["get", "Status"], "Planned project"],
+        ["string", "#fa4d56"],
+        "#ffffff",
+      ],
+      "circle-stroke-color": "black",
+      "circle-stroke-width": 4,
+    },
+  });
+
+  $("#damsconstructionlegend").css("visibility", "visible");
+}
+
+function threesout(map) {
+  map.fitBounds([
+    [102.346509255666902, 10.4227359886091246],
+    [107.6363823439247085, 14.708618006184869],
+  ]);
+  map.removeLayer("threes_basin");
+  map.removeLayer("threes_river");
+  map.removeLayer("threes_river_names");
+  map.removeLayer("hydro_power_dams");
+  $("#damslegend").css("visibility", "hidden");
+}
+
+function threesin(map) {
+  map.flyTo({
+    zoom: 7,
+    center: [106.084986, 13.2],
+    pitch: 49.47,
+    bearing: 0.0,
+  });
+  map.addLayer({
+    id: "threes_basin",
+    type: "fill",
+    source: "threes_basin",
+    paint: {
+      "fill-color": ["get", "color"],
+      "fill-opacity": 0.3,
+      "fill-outline-color": "blue",
+    },
+  });
+  map.addLayer({
+    id: "threes_river",
+    type: "line",
+    source: "threes_river",
+    paint: {
+      "line-color": "red",
+      "line-opacity": 1,
+      "line-width": 3,
+    },
+  });
+  map.addLayer({
+    id: "threes_river_names",
+    type: "symbol",
+    source: "threes_river_names",
+    paint: {
+      "text-halo-width": 3,
+      "text-halo-color": "white",
+    },
+    layout: {
+      //"text-font": ["Viaoda Libre Regular", "Open Sans Regular"],
+      "symbol-placement": "point",
+      "text-anchor": "center",
+      "text-field": ["get", "name"],
+      "text-size": 24,
+    },
+  });
+
+  map.addLayer({
+    id: "hydro_power_dams",
+    type: "circle",
+    source: "hydro_power_dams",
+    paint: {
+      "circle-radius": ["*", ["log10", ["number", ["get", "Mean Annua"]]], 4],
+      "circle-color": "#7DA0C0",
+      "circle-stroke-color": "black",
+      "circle-stroke-width": 4,
+    },
+    filter: ["==", ["get", "Status"], "In Operation"],
+  });
+
+  $("#damslegend").css("visibility", "visible");
+}
 
 function GoldenTriangleOut(map) {
   map.removeLayer("Mekong_line");
