@@ -100,8 +100,8 @@ const Text1 = () => {
           </p>
           <p>
             Under Xi Jinping, China has taken a more active role in engaging
-            other Mekong countries. One press release from China 's government
-            reads:
+            other Mekong countries. One press release from China's government
+            addressing a forum of Mekong River states reads:
           </p>
           <blockquote>
             [China's Minister of Water Resources] said that China will
@@ -244,16 +244,6 @@ const Text1 = () => {
             Riparian Lives
           </h2>
           <p>
-            Entire communities live floating on the Tonle Sap, depending on the
-            lake for food, water, and everything else. Fleets of houseboats
-            owned by the Cham people, an ethnic minority, are a common sight
-            along the Cambodian sections of the Mekong River. For example - many
-            Cham people, an ethnic minority, are nomadic on their fleet of
-            houseboats, migrating along the Mekong river in their fleet-villages
-            as the season change - even mooring in downtown Phnom Penh, much to
-            the chagrin of Cambodian government officials.
-          </p>
-          <p>
             The Cambodian diet is dominated by rice and fish, with fish-related
             activities employing 45% of the population. Cambodians are the
             largest consumers of freshwater fish per capita in the world; fish
@@ -300,9 +290,7 @@ const Text1 = () => {
             registered for one, through Cambodia's post-independence history
             <sup>6</sup>
           </p>
-          <h2 id="para6Trigger">
-            The Issue of Dams
-          </h2>
+          <h2 id="para6Trigger">The Issue of Dams</h2>
           <p>
             Transboundary water governance has complicated traditional
             conceptualisations of resource geopolitics, given the conceptual
@@ -418,32 +406,87 @@ const Text1 = () => {
       </section>
       <section className="textscreen textscreen2" id="section5">
         <h2>Conclusion</h2>
-        <p>The conflict over dams is often framed as a technical question: how will a dam affect the river's hydrology? How much land will it flood and how valuable is the land? What does a country gain from being the “battery of Asia”? How can we quantify the damage inflicted by the dam and weigh it against its benefits?</p>
-        <p>Human beings and their interests, if they are to be considered at all, must be converted to a commensurable and fungible unit of utility - in most cases, money. </p>
-        <p>Such narrow framing, however, paints over other forms of understanding and masks the people who are most affected by these hydropower projects. Cost-benefit assessments made by national capitals and Western cities where consultancies operate often leave out the very real impacts of locals who have to abandon their ancestral lands, people who have a level of understanding of the river that economists or hydrologists may not capture.</p>
-        <p>The shock, for example, of a local discovering the Mekong is flowing clear, free from sediment, for the first time in their lives, of having to plan for rapid unexpected changes in water level or the creation of man-made droughts as dams trap the river and fill their reservoirs</p>
-        <p>Local knowledge is less a hierarchy as a leaderless social network. It is located in communities and spans political borders. They are found in NGOs, and civil society, and within people's lived experiences, customs, folklore, and oral history. They are spread by word of mouth and by mass media. Deprived of formal power, the champions of folk knowledge form transnational linkages to pool knowledge and share on best practices, and lobby academics to turn local knowledge into technical knowledge.</p>
-        <p>To truly grasp and tackle the issues of dam-building in the Mekong, then, we must find a way to integrate local knowledges into decision-making structures.</p>
+        <p>
+          The conflict over dams is often framed as a technical question: how
+          will a dam affect the river's hydrology? How much land will it flood
+          and how valuable is the land? What does a country gain from being the
+          “battery of Asia”? How can we quantify the damage inflicted by the dam
+          and weigh it against its benefits?
+        </p>
+        <p>
+          Human beings and their interests, if they are to be considered at all,
+          must be converted to a commensurable and fungible unit of utility - in
+          most cases, money.{" "}
+        </p>
+        <p>
+          Such narrow framing, however, paints over other forms of understanding
+          and masks the people who are most affected by these hydropower
+          projects. Cost-benefit assessments made by national capitals and
+          Western cities where consultancies operate often leave out the very
+          real impacts of locals who have to abandon their ancestral lands,
+          people who have a level of understanding of the river that economists
+          or hydrologists may not capture.
+        </p>
+        <p>
+          The shock, for example, of a local discovering the Mekong is flowing
+          clear, free from sediment, for the first time in their lives, of
+          having to plan for rapid unexpected changes in water level or living
+          through the man-made droughts as dams trap the river and fill their
+          reservoirs
+        </p>
+        <p>
+          Local knowledge is less a hierarchy as a leaderless social network. It
+          is located in communities and spans political borders. They are found
+          in NGOs, and civil society, and within people's lived experiences,
+          customs, folklore, and oral history. They are spread by word of mouth
+          and by mass media. Deprived of formal power, the champions of folk
+          knowledge form transnational linkages to pool knowledge and share on
+          best practices, and lobby academics to turn local knowledge into
+          technical knowledge.
+        </p>
+        <p>
+          To truly grasp and tackle the issues of dam-building in the Mekong,
+          then, we must find a way to integrate local knowledges into
+          decision-making structures.
+        </p>
       </section>
-      
-    <section className="textscreen textscreen2">
-      <h2>Sources</h2>
-      <ol>
-        <li> https://www.mrcmekong.org/about/mekong-basin/people/</li>
-        <li> http://www.mwr.gov.cn/xw/slyw/201804/t20180409_1034896.html</li>
-        <li>https://nhess.copernicus.org/preprints/nhess-2021-65/nhess-2021-65.pdf        </li>
-        <li> https://pubs.iclarm.net/resource_centre/3494-11879-1-PB.pdf</li>
-        <li>https://earthobservatory.nasa.gov/images/3483/tonle-sap-wetlands-cambodia    </li>
-        <li>https://www.aljazeera.com/news/2019/12/13/beautifying-phnom-penh-muslim-cham-face-eviction-in-cambodia</li>
-        <li> https://www.mrcmekong.org/news-and-events/news/pr-09-12-2021/</li>
-        <li> https://www.mrcmekong.org/news-and-events/news/pr-18112021/</li>
-        <li> https://world.huanqiu.com/article/9CaKrnKooZN</li>
-        <li> https://thediplomat.com/2018/12/the-trouble-with-the-lancang-mekong-cooperation-forum/</li>
-        <li>https://iwaponline.com/wp/article-abstract/18/6/1420/20520/Damming-the-Mekong-tributaries-water-security-and</li>
-        <li>https://www.eastasiaforum.org/2018/08/15/cambodias-chinese-dam-conundrum/</li>
-        <li>https://iwaponline.com/wp/article-abstract/18/6/1420/20520/Damming-the-Mekong-tributaries-water-security-and</li>
-      </ol>
-    </section>
+
+      <section className="textscreen textscreen2">
+        <h2>Sources</h2>
+        <ol>
+          <li> https://www.mrcmekong.org/about/mekong-basin/people/</li>
+          <li> http://www.mwr.gov.cn/xw/slyw/201804/t20180409_1034896.html</li>
+          <li>
+            https://nhess.copernicus.org/preprints/nhess-2021-65/nhess-2021-65.pdf{" "}
+          </li>
+          <li> https://pubs.iclarm.net/resource_centre/3494-11879-1-PB.pdf</li>
+          <li>
+            https://earthobservatory.nasa.gov/images/3483/tonle-sap-wetlands-cambodia{" "}
+          </li>
+          <li>
+            https://www.aljazeera.com/news/2019/12/13/beautifying-phnom-penh-muslim-cham-face-eviction-in-cambodia
+          </li>
+          <li>
+            {" "}
+            https://www.mrcmekong.org/news-and-events/news/pr-09-12-2021/
+          </li>
+          <li> https://www.mrcmekong.org/news-and-events/news/pr-18112021/</li>
+          <li> https://world.huanqiu.com/article/9CaKrnKooZN</li>
+          <li>
+            {" "}
+            https://thediplomat.com/2018/12/the-trouble-with-the-lancang-mekong-cooperation-forum/
+          </li>
+          <li>
+            https://iwaponline.com/wp/article-abstract/18/6/1420/20520/Damming-the-Mekong-tributaries-water-security-and
+          </li>
+          <li>
+            https://www.eastasiaforum.org/2018/08/15/cambodias-chinese-dam-conundrum/
+          </li>
+          <li>
+            https://iwaponline.com/wp/article-abstract/18/6/1420/20520/Damming-the-Mekong-tributaries-water-security-and
+          </li>
+        </ol>
+      </section>
     </div>
   );
 };
@@ -556,9 +599,9 @@ const Section1 = () => {
         trigger: "#map1",
         start: "top top",
         endTrigger: "#section5",
-        end: "bottom bottom",
+        end: "bottom top",
         pin: true,
-        // markers: true,
+        markers: true,
         id: "map1",
       });
 
@@ -703,7 +746,7 @@ const Section1 = () => {
         onEnter: () => {
           stop(anim);
           anim = undefined;
-          map.removeLayer("Mekong_countries");
+          GoldenTriangleOut(map);
           map.fitBounds([
             [102.346509255666902, 9.5],
             [107.6363823439247085, 14.708618006184869],
@@ -964,7 +1007,7 @@ const Section1 = () => {
           anim = undefined;
           map.fitBounds(
             [
-              [97, 12.28],
+              [97, 11.5],
               [108.041, 31.87],
             ],
             { pitch: 0, bearing: 0 }
@@ -1229,6 +1272,7 @@ function Cambodiandamsin(map) {
         ["string", "#fa4d56"],
         "#ffffff",
       ],
+      "circle-opacity": 0.7,
       "circle-stroke-color": "black",
       "circle-stroke-width": 4,
     },
@@ -1310,7 +1354,6 @@ function threesin(map) {
 }
 
 function GoldenTriangleOut(map) {
-  map.removeLayer("Mekong_line");
   map.removeLayer("Mekong_countries");
   map.removeLayer("golden_triangle_centoid");
 }
