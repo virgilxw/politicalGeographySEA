@@ -237,12 +237,6 @@ const Text1 = () => {
             src={Tonle_Sap_2}
             alt="scrollimages"
           />
-          <img
-            id="Cham1"
-            className="imageToShow"
-            src={Cham1}
-            alt="scrollimages"
-          />
           <img id="MRC" className="imageToShow" src={MRC} alt="scrollimages" />
         </div>
         <div className="right-content">
@@ -269,7 +263,7 @@ const Text1 = () => {
             sediment, the lack of drought, and the yearly "heartbeat" of Mekong
             floods.<sup>4</sup>
           </p>
-          <p className="contentMarker" data-marker-content="TonleSap2">
+          <p>
             The ecological importance of the seasonal flood cycle cannot be
             overstated. The huge lake and surrounding wetlands created by the
             flooding support a diverse freshwater fish ecosystem, and the silt
@@ -291,7 +285,7 @@ const Text1 = () => {
             fleet-villages as the season change - even mooring in downtown Phnom
             Penh, much to the chagrin of Cambodian government officials.
           </p>
-          <p className="contentMarker" data-marker-content="Cham1">
+          <p className="contentMarker" data-marker-content="TonleSap2">
             The Cham, like other ethnic minorities in Cambodia, were prosecuted
             by the Khmer Rouge during the Cambodian genocide, which sought to
             ethnically cleanse the Cham's Islamic identity from the
@@ -564,7 +558,7 @@ const Section1 = () => {
         endTrigger: "#section5",
         end: "bottom bottom",
         pin: true,
-        markers: true,
+        // markers: true,
         id: "map1",
       });
 
