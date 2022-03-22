@@ -79,8 +79,9 @@ const Text1 = () => {
         <div className="bubble dark righty" id="para2Countries">
           <p>
             It also runs through 6 sovereign countries, creating conflict that
-            deeply affects the lives of the 65 million people who live within
-            its watershed. <sup> 1 </sup>
+            deeply affects the lives of the 70 million people who live within
+            its watershed. The population is expected to grow to 100 million by
+            2050. <sup> 1 </sup>
           </p>
         </div>
         <div className="bubble dark lefty" id="para3Source">
@@ -275,7 +276,7 @@ const Text1 = () => {
             fleet-villages as the season change - even mooring in downtown Phnom
             Penh, much to the chagrin of Cambodian government officials.
           </p>
-          <p className="contentMarker" data-marker-content="TonleSap2">
+          <p>
             The Cham, like other ethnic minorities in Cambodia, were prosecuted
             by the Khmer Rouge during the Cambodian genocide, which sought to
             ethnically cleanse the Cham's Islamic identity from the
@@ -289,6 +290,52 @@ const Text1 = () => {
             were stripped of citizenship due to their ethnicity, or never
             registered for one, through Cambodia's post-independence history
             <sup>6</sup>
+          </p>
+          <h2>The impact of climate change</h2>
+          <p className="contentMarker" data-marker-content="TonleSap2">
+            Human-induced climate change are expected to considerably change the
+            sensitive hydrology of the Mekong River. Although the yearly flow of
+            the river is expected to rise, the Mekong will flow higher during
+            flood-season and lower during dry season. As one study notes,
+          </p>
+
+          <blockquote>
+            <p>
+              First, higher peak discharges occurring at higher frequencies
+              during the wet season will increase the flood risks across the
+              basin. Higher flood risks will be particularly relevant for human
+              safety and agricultural production in the lower Mekong region,
+              including the Cambodian and Vietnamese delta. Vast agriculture
+              areas along the main rivers and in the delta’s floodplain will
+              likely experience higher flood water levels, thus having higher
+              risks of reduced productivity and crop failure. Higher river flow,
+              combined with sea level rise will also result in higher flood
+              risks for urban areas in the Mekong Delta.
+            </p>
+            <p>
+              <br />
+              <br />
+              Second, increased water availability during the dry season
+              suggested by the Q95 and discharge deficit analyses can have
+              positive implications. The projected higher river discharge during
+              the dry season months could help to mitigate water shortage in the
+              basin. Higher dry season flow will also contribute to control salt
+              water intrusion in the Vietnamese Mekong delta, where fresh water
+              flow from upstream is currently used to control the salt gradient
+              in rivers and canals in the coastal area. Additionally, projected
+              discharge reduction at the beginning of the wet season (i.e. in
+              June) probably has negative impacts on ecological and agricultural
+              productivity. Flow alteration in the early wet season will likely
+              change the sediment and nutrient dynamics in the downstream
+              floodplains, which are very important for existing ecosystems and
+              agricultural practices. Lastly, rainfall reduction in some areas
+              of the lower Mekong could damage agricultural production,
+              especially rainfed agriculture.<sup>7</sup>
+            </p>
+          </blockquote>
+          <p>
+            Dams might be one way water resources are managed, but dams carry
+            with them deep political and geographical implications.
           </p>
           <h2 id="para6Trigger">The Issue of Dams</h2>
           <p>
@@ -309,8 +356,8 @@ const Text1 = () => {
             countries, thus, have complete sovereignty over the river as it
             flows through their countries. Nevertheless, China has sought to
             bypass the MRC, an organisation funded in part by international
-            organisations and governments such as Germany <sup>7</sup> and the
-            United States <sup>8</sup>, by launching their own multilateral
+            organisations and governments such as Germany <sup>8</sup> and the
+            United States <sup>9</sup>, by launching their own multilateral
             organisation, the "Mekong-Lancang Cooperation". As a Chinese
             state-run newspaper puts it:
           </p>
@@ -318,13 +365,13 @@ const Text1 = () => {
             The Lancang-Mekong water resources cooperation affairs should be
             negotiated by the Lancang-Mekong countries themselves. The
             Lancang-Mekong Water Resources Cooperation plan should be led by our
-            six countries, and only our six countries themselves.<sup>9</sup>
+            six countries, and only our six countries themselves.<sup>10</sup>
           </blockquote>
           <p>
             Some commentators have critiqued the Mekong-Lancang Cooperation as a
             tactic for China isolate smaller countries from international
             diplomatic support, accusing the organisation of being founded to
-            cover for China's unilateral dam building.<sup>10</sup>
+            cover for China's unilateral dam building.<sup>11</sup>
           </p>
           <p>
             Dam-building, whilst beneficial to the host country as a way to
@@ -369,7 +416,7 @@ const Text1 = () => {
             the Yali Dam, Cambodia has been hampered by 'insufficient data' and
             'scientific information' to justify unjust impacts within its
             territory, further entrenching the upstream hegemony which Vietnam
-            has over the 3S Basin.<sup>11</sup>
+            has over the 3S Basin.<sup>12</sup>
           </p>
         </div>
         <div className="bubble dark lefty" id="para8CambodianDams">
@@ -381,7 +428,7 @@ const Text1 = () => {
             and financial aid. Debates remain on whether these dams, built under
             the condition that China operates the dams and receives all revenues
             operated by the dam for 50 years , will benefit Cambodia
-            economically.<sup>12</sup>
+            economically.<sup>13</sup>
           </p>
           <p>
             The calcification of authoritarianism in the last 20 years has also
@@ -391,7 +438,7 @@ const Text1 = () => {
             parties led to higher eviction rates. In the village of Kbal Romeas,
             representatives of the ruling Cambodian People's Party are torn
             between toeing the party line and respecting anti-dam sentiments
-            within their communities. <sup>13</sup>
+            within their communities. <sup>14</sup>
           </p>
         </div>
         <div className="bubble dark righty" id="para9alldams">
@@ -411,12 +458,13 @@ const Text1 = () => {
           will a dam affect the river's hydrology? How much land will it flood
           and how valuable is the land? What does a country gain from being the
           “battery of Asia”? How can we quantify the damage inflicted by the dam
-          and weigh it against its benefits?
+          and weigh it against its benefits? Can it save us from human-induced
+          climate change?
         </p>
         <p>
           Human beings and their interests, if they are to be considered at all,
           must be converted to a commensurable and fungible unit of utility - in
-          most cases, money.{" "}
+          most cases, money.
         </p>
         <p>
           Such narrow framing, however, paints over other forms of understanding
@@ -432,7 +480,9 @@ const Text1 = () => {
           clear, free from sediment, for the first time in their lives, of
           having to plan for rapid unexpected changes in water level or living
           through the man-made droughts as dams trap the river and fill their
-          reservoirs
+          reservoirs and as extremely-strong monsoons flood vast swatches of
+          people's homes. It is in the lived experienced of individuals that we
+          will get the best picture of what is happening to the Mekong River.
         </p>
         <p>
           Local knowledge is less a hierarchy as a leaderless social network. It
@@ -454,26 +504,25 @@ const Text1 = () => {
       <section className="textscreen textscreen2">
         <h2>Sources</h2>
         <ol>
-          <li> https://www.mrcmekong.org/about/mekong-basin/people/</li>
+          <li>
+            https://www.sciencedirect.com/science/article/abs/pii/S0143622811000774?via%3Dihub
+          </li>
           <li> http://www.mwr.gov.cn/xw/slyw/201804/t20180409_1034896.html</li>
           <li>
-            https://nhess.copernicus.org/preprints/nhess-2021-65/nhess-2021-65.pdf{" "}
+            https://nhess.copernicus.org/preprints/nhess-2021-65/nhess-2021-65.pdf
           </li>
           <li> https://pubs.iclarm.net/resource_centre/3494-11879-1-PB.pdf</li>
           <li>
-            https://earthobservatory.nasa.gov/images/3483/tonle-sap-wetlands-cambodia{" "}
+            https://earthobservatory.nasa.gov/images/3483/tonle-sap-wetlands-cambodia
           </li>
           <li>
             https://www.aljazeera.com/news/2019/12/13/beautifying-phnom-penh-muslim-cham-face-eviction-in-cambodia
           </li>
-          <li>
-            {" "}
-            https://www.mrcmekong.org/news-and-events/news/pr-09-12-2021/
-          </li>
+          <li>https://hess.copernicus.org/articles/20/3027/2016/</li>
+          <li>https://www.mrcmekong.org/news-and-events/news/pr-09-12-2021/</li>
           <li> https://www.mrcmekong.org/news-and-events/news/pr-18112021/</li>
           <li> https://world.huanqiu.com/article/9CaKrnKooZN</li>
           <li>
-            {" "}
             https://thediplomat.com/2018/12/the-trouble-with-the-lancang-mekong-cooperation-forum/
           </li>
           <li>
@@ -601,7 +650,7 @@ const Section1 = () => {
         endTrigger: "#section5",
         end: "bottom top",
         pin: true,
-        markers: true,
+        //markers: true,
         id: "map1",
       });
 
@@ -926,12 +975,12 @@ const Section1 = () => {
         autoAlpha: 1,
         ease: "power1.in",
         scrollTrigger: {
-          trigger: "#para8alldams",
+          trigger: "#para9alldams",
           start: "top 70%",
           end: "top 30%",
           scrub: true,
           // markers: true,
-          id: "#para8alldams",
+          id: "#para9alldams",
         },
       });
 
@@ -1019,7 +1068,7 @@ const Section1 = () => {
           Cambodiandamsin(map);
         },
         //markers: true,
-        id: "para8alldams",
+        id: "para9alldams",
       });
     });
   });
