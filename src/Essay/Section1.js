@@ -499,6 +499,14 @@ const Text1 = () => {
           then, we must find a way to integrate local knowledges into
           decision-making structures.
         </p>
+        <h2 id="findoutmore">Find out more</h2>
+        <p>The National University of Singapore's Geogrpahy Department have released the videos and essay reports of their students conducting fieldwork in Cambodia with the theme of "hydro-social relations" on these websites:</p>
+        <ul>
+          <li><a href="https://www.riverwetlands.org/">https://www.riverwetlands.org/</a></li>
+          <li><a href="https://libds.nus.edu.sg/river/chhnoktru">https://libds.nus.edu.sg/river/chhnoktru</a></li>
+        </ul>
+        
+        <iframe id="vid" height="760" src="https://www.youtube.com/embed/DzbtyDrRMg8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </section>
 
       <section className="textscreen textscreen2">
@@ -1069,6 +1077,17 @@ const Section1 = () => {
         },
         //markers: true,
         id: "para9alldams",
+      });
+
+      ScrollTrigger.create({
+        trigger: "#findoutmore",
+        start: "top 60%",
+        onEnter: () => {
+        },
+        onLeaveBack: () => {
+        },
+        markers: true,
+        id: "findoutmore",
       });
     });
   });
