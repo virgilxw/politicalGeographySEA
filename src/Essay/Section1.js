@@ -1055,6 +1055,7 @@ const Section1 = () => {
         //markers: true,
         id: "para8CambodianDams",
       });
+      
 
       ScrollTrigger.create({
         trigger: "#para9alldams",
@@ -1077,17 +1078,6 @@ const Section1 = () => {
         },
         //markers: true,
         id: "para9alldams",
-      });
-
-      ScrollTrigger.create({
-        trigger: "#findoutmore",
-        start: "top 60%",
-        onEnter: () => {
-        },
-        onLeaveBack: () => {
-        },
-        markers: true,
-        id: "findoutmore",
       });
     });
   });
